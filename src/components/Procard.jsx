@@ -8,9 +8,9 @@ function Procard({ displaypro }) {
 
   const addToCart = async () => {
     try {
-      const { url, name, category, price, description } = displaypro;
+      const {id, url, name, category, price, description } = displaypro;
 
-      const response = await addtocart({ url, name, price, category, description });
+      const response = await addtocart({id, url, name, price, category, description });
       console.log('Item added to cart:', response);
     } catch (error) {
       console.error('Error adding item to cart:', error);

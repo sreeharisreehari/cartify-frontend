@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getfromcart, deleteitems } from '../services/allAPI';
+import { getfromcart, deleteitems, deleteproducts } from '../services/allAPI';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
@@ -44,6 +44,8 @@ const [total,setTotal] = useState(0)
   const redirectToHome = async () => {
     try {
       // Clear the items in the cart before redirecting
+      await Promise.all(addedItems.map(item => deleteproducts(item.id)));
+
       await Promise.all(addedItems.map(item => deleteitems(item.id)));
       setAddedItems([]);
   

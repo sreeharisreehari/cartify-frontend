@@ -21,7 +21,8 @@ function Addpro({Setaddstatus}) {
     name:'',
     category:'',
     price:'',
-    description:''
+    description:'',
+   
   })
   console.log(pro);
 

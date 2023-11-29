@@ -41,3 +41,9 @@ export const addfromfavorites = async(reqbody)=>{
     return await commonAPI('POST',`${serverURL}/Cart`,reqbody)
 
 }  
+
+
+//delete all added products 
+export const deleteproducts = async(id)=>{
+    return await commonAPI('DELETE',`${serverURL}/products/${id}`,"")
+}
