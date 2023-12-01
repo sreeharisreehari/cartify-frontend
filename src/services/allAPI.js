@@ -47,3 +47,7 @@ export const addfromfavorites = async(reqbody)=>{
 export const deleteproducts = async(id)=>{
     return await commonAPI('DELETE',`${serverURL}/products/${id}`,"")
 }
+//update favorites after buying a product
+export const deletefromfavorites = async(id)=>{
+    return await commonAPI('DELETE',`${serverURL}/favorites/${id}`,"")
+}

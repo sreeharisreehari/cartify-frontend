@@ -12,14 +12,12 @@ function Favorcard({showpro,Setdeletefavors}) {
   }
 
   const addfromfavor = async () => {
-    try {
-      const { url, name, category, price, description } = showpro;
+  
+      const {id, url, name, category, price, description } = showpro;
 
-      const response = await addfromfavorites({ url, name, price, category, description });
-      console.log('Item added to cart:', response);
-    } catch (error) {
-      console.error('Error adding item to cart:', error);
-    }
+      const response = await addfromfavorites({ id,url, name, price, category, description });
+      console.log( response);
+ 
   };
   
  

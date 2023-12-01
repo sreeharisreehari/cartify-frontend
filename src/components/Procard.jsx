@@ -4,29 +4,25 @@ import { addtocart, addtofavorites } from '../services/allAPI';
 import { Button, Col, Row } from 'react-bootstrap';
 
 function Procard({ displaypro }) {
-  const [isAddedToFavorites, setIsAddedToFavorites] = useState(false);
+  
 
   const addToCart = async () => {
-    try {
+  
       const {id, url, name, category, price, description } = displaypro;
 
       const response = await addtocart({id, url, name, price, category, description });
       console.log('Item added to cart:', response);
-    } catch (error) {
-      console.error('Error adding item to cart:', error);
-    }
+   
   };
 
   const addToFavorite = async () => {
-    try {
-      const { url, name, category, price, description } = displaypro;
+    
+      const {id, url, name, category, price, description } = displaypro;
 
-      await addtofavorites({ url, name, price, category, description });
-      setIsAddedToFavorites(true);
-      console.log('Item added to favorites');
-    } catch (error) {
-      console.error('Error adding item to favorites:', error);
-    }
+       const response = await addtofavorites({ id,url, name, price, category, description });
+      
+      console.log(response);
+  
   };
 
   return (

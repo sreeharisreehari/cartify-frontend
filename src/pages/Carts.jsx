@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getfromcart, deleteitems, deleteproducts } from '../services/allAPI';
+import { getfromcart, deleteitems, deleteproducts, deletefromfavorites } from '../services/allAPI';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
@@ -10,32 +10,28 @@ function Carts() {
   const [addedItems, setAddedItems] = useState([]);
   console.log(addedItems);
 
-const [total,setTotal] = useState(0)
+
   useEffect(() => {
     const fetchCartItems = async () => {
-      try {
+     
         const response = await getfromcart();
         console.log(response);
 
         
         setAddedItems(response.data || []);
-      } catch (error) {
-        console.error('Error fetching cart items:', error);
-      }
+     
     };
 
     fetchCartItems();
   }, []);
 
   const removeItem = async (id, index) => {
-    try {
+   
       await deleteitems(id);
       const updatedItems = [...addedItems];
       updatedItems.splice(index, 1);
       setAddedItems(updatedItems);
-    } catch (error) {
-      console.error('Error removing item:', error);
-    }
+   
   };
 
   const calculateTotalPrice = () => {
@@ -43,7 +39,9 @@ const [total,setTotal] = useState(0)
   };
   const redirectToHome = async () => {
     try {
-      // Clear the items in the cart before redirecting
+      await Promise.all(addedItems.map(item => deletefromfavorites(item.id)));
+
+      
       await Promise.all(addedItems.map(item => deleteproducts(item.id)));
 
       await Promise.all(addedItems.map(item => deleteitems(item.id)));

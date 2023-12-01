@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+
 import Product from '../components/Product'
 
 
 function Home() {
-  const [addstatus,Setaddstatus] = useState({})
+  
   return (
     <div>
       <div>
@@ -12,7 +12,7 @@ function Home() {
         <center> <h1>Expolre Our Products</h1> </center> </div>
         
       </div>
-      <Product addstatus = {addstatus}/>
+      <Product/>
     </div>
   )
 }
