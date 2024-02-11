@@ -13,7 +13,7 @@ function Footer() {
 
           </div>
           <div className="col-lg-3 d-flex flex-column">
-            <h4>Products</h4>
+            <h4>Pages</h4>
             <Link style={{textDecoration:'none'}} to={'./'}>  Landing Page</Link>
             <Link style={{textDecoration:'none'}} to={'./buyorsell'}>Buy or Sell</Link>
             <Link style={{textDecoration:'none'}} to={'./home'}>Home</Link>
@@ -21,10 +21,10 @@ function Footer() {
 
           </div>
           <div className="col-lg-3 d-flex flex-column">
-          <h3>Guides</h3>
-        <Link to={'https://react.dev/'} style={{color:'black' ,textDecoration:'none'}}>React</Link>
-        <Link to={'https://react-bootstrap.github.io/'} style={{color:'black' ,textDecoration:'none'}}>Node js</Link>
-        <Link to={'https://bootswatch.com/'} style={{color:'black' ,textDecoration:'none'}}>BootsWatch</Link>
+          <h3>Services</h3>
+        <Link style={{textDecoration:'none'}}>Buying</Link>
+        <Link style={{textDecoration:'none'}}>Selling</Link>
+        <Link  style={{textDecoration:'none'}}>Cart</Link>
 
           </div>
           <div className="col-lg-3 d-flex flex-column">
