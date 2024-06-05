@@ -52,7 +52,7 @@ function BuyorSell() {
       </Card.Body>
     </Card> </Col>
     <Col data-aos="zoom-in-left" data-aos-duration="1000"  md={3}> <Card className='ms-5 card shadow ' style={{ width: '20rem' }}>
-      <Card.Img variant="top" src="https://parcamkapinda.com/img/cart.gif" />
+      <Card.Img variant="top" src="https://i.pinimg.com/originals/0f/e6/62/0fe66229dd01d34b5d89f681d97ded29.gif" />
       <Card.Body>
       
         <Card.Text>
